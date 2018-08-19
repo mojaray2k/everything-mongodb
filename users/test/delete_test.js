@@ -10,8 +10,8 @@ describe('Deleting a user', () => {
       .then(() => done());
   });
 
-  it('model instance remove', (done) => {
-    // amen which is a User class instance
+  it('model/class instance remove', (done) => {
+    // amen which is a User model/class instance
     amen.remove()
       .then(() => User.findOne({ name: 'Amen'}))
       .then((user) => {
@@ -20,8 +20,8 @@ describe('Deleting a user', () => {
       });
   });
 
-  it('class method remove', (done) => {
-    // User class
+  it('model/class method remove', (done) => {
+    // User model/class
     User.remove({ name: 'Amen' })
       .then(() => User.findOne({ name: 'Amen'}))
       .then((user) => {
@@ -30,8 +30,8 @@ describe('Deleting a user', () => {
       });
   });
 
-  it('class method findAndRemove', (done) => {
-    // User class
+  it('model/class method findAndRemove', (done) => {
+    // User model/class
     User.findOneAndRemove({ name: 'Amen' })
       .then(() => User.findOne({ name: 'Amen'}))
       .then((user) => {
@@ -40,8 +40,8 @@ describe('Deleting a user', () => {
       });
   });
 
-  it('class method findByIdRemove', (done) => {
-    // User class
+  it('model/class method findByIdRemove', (done) => {
+    // User model/class
     User.findByIdAndRemove(amen._id)
       .then(() => User.findOne({ name: 'Amen'}))
       .then((user) => {
